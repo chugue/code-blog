@@ -20,16 +20,30 @@ export default function BlogPosts() {
             <span className={styles.date}> • {post.date}</span>
           </div>
 
-          <Link href={`/blog/${post.slug}`}>
-            <h2 className={styles.postTitle}>{post.title}</h2>
-          </Link>
+          <div className={styles.postHeader}>
+            <Link href={`/blog/${post.slug}`} className={styles.titleContainer}>
+              <h2 className={styles.postTitle}>
+                {post.title}: {post.subtitle}
+              </h2>
+            </Link>
+            <div className={styles.authorInfo}>
+              <Image
+                src={post.author.avatar || "/placeholder.svg"}
+                alt={post.author.name}
+                width={25}
+                height={25}
+                className={styles.avatar}
+              />
+              <span>{post.author.name}</span>
+            </div>
+          </div>
 
           <div className={styles.postContent}>
             <div className={styles.postText}>
               <p className={styles.postExcerpt}>{post.excerpt}</p>
 
               <Link href={`/blog/${post.slug}`}>
-                <span className={styles.readMore}>Read more</span>
+                <span className={styles.readMore}>Read more </span>
               </Link>
             </div>
 
@@ -37,22 +51,11 @@ export default function BlogPosts() {
               <Image
                 src={post.image || "/placeholder.svg"}
                 alt={post.title}
-                width={400}
-                height={250}
+                width={1000}
+                height={500}
                 layout="responsive"
               />
             </div>
-          </div>
-
-          <div className={styles.authorInfo}>
-            <Image
-              src={post.author.avatar || "/placeholder.svg"}
-              alt={post.author.name}
-              width={24}
-              height={24}
-              className={styles.avatar}
-            />
-            <span>{post.author.name}</span>
           </div>
         </article>
       ))}

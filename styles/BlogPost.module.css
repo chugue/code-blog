@@ -4,18 +4,10 @@
   padding: 0;
 }
 
-.category {
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-}
-
-.category span {
-  color: var(--primary);
-  font-weight: 600;
-}
-
 .date {
   color: var(--muted);
+  margin-left: auto;
+  margin-bottom: 1rem;
 }
 
 .title {
@@ -23,6 +15,7 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.2;
+  color: var(--secondary);
 }
 
 .authorInfo {
@@ -42,15 +35,9 @@
   margin: 3rem auto 3rem auto;
   overflow: hidden;
   aspect-ratio: 2 / 1;
-  position: relative;
   border-radius: 10px;
-}
-
-.fullWidthImage {
-  width: 100%;
-  height: 100%;
+  object-position: bottom;
   object-fit: cover;
-  position: absolute;
 }
 
 .contentContainer {
@@ -91,7 +78,7 @@
   padding: 6px 12px;
   border-radius: 16px;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -103,6 +90,8 @@
   margin-bottom: 1rem;
   font-size: 0.9rem;
   color: var(--muted);
+  display: flex;
+  justify-content: flex-end;
 }
 
 .authorInfoContainer {
@@ -121,4 +110,33 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.subtitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.authorDetailsText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1rem;
+  gap: 0.5rem;
+}
+
+.username {
+  font-size: 1.56rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--muted);
 }

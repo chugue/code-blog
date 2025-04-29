@@ -5,11 +5,13 @@ import mockPosts from "../mock/posts.json";
 interface Author {
   name: string;
   avatar: string;
+  username: string;
 }
 
-interface Post {
+export interface Post {
   id: number;
   title: string;
+  subtitle: string;
   slug: string;
   excerpt: string;
   content: string;

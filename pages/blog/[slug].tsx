@@ -5,16 +5,17 @@ import Link from "next/link";
 import Head from "next/head";
 import styles from "../../styles/BlogPost.module.css";
 import { useEffect, useState } from "react";
+import { Post } from "../../contexts/BlogContext";
 
 export default function BlogPost() {
   const router = useRouter();
   const { slug } = router.query;
   const { getPostBySlug } = useBlog();
-  const [post, setPost] = useState(null);
+  const [post, setPost] = useState<Post | null>(null);
 
   useEffect(() => {
     if (slug) {
-      const foundPost = getPostBySlug(slug as string);
+      const foundPost: Post | undefined = getPostBySlug(slug as string);
       if (foundPost) {
         setPost(foundPost);
       }
@@ -28,7 +29,7 @@ export default function BlogPost() {
   return (
     <div className={styles.blogPost}>
       <Head>
-        <title>{post.title} | Huly Blog</title>
+        <title>{post.title} | Code Factory Blog</title>
         <meta name="description" content={post.excerpt} />
       </Head>
 
@@ -38,29 +39,24 @@ export default function BlogPost() {
           alt={post.title}
           width={1200}
           height={600}
-          layout="responsive"
-          className={styles.fullWidthImage}
         />
       </div>
 
       <div className={styles.contentContainer}>
-        <div className={styles.dateInfo}>
-          <span className={styles.date}>{post.date}</span>
-        </div>
-
-        <h1 className={styles.title}>{post.title}</h1>
-
         <div className={styles.authorInfoContainer}>
           <div className={styles.authorInfo}>
             <div className={styles.authorDetails}>
               <Image
                 src={post.author.avatar || "/placeholder.svg"}
                 alt={post.author.name}
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className={styles.avatar}
               />
-              <span>{post.author.name}</span>
+              <div className={styles.authorDetailsText}>
+                <p className={styles.username}>{post.author.username}</p>
+                <p className={styles.name}>{post.author.name}</p>
+              </div>
             </div>
 
             <div className={styles.categoryButton}>
@@ -69,6 +65,13 @@ export default function BlogPost() {
               </Link>
             </div>
           </div>
+        </div>
+
+        <h1 className={styles.title}>{post.title}</h1>
+        <h2 className={styles.subtitle}>{post.subtitle}</h2>
+
+        <div className={styles.dateInfo}>
+          <span className={styles.date}>{post.date}</span>
         </div>
 
         <div
