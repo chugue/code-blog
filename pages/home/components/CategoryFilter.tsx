@@ -1,13 +1,13 @@
-import { useBlog } from "@/contexts/BlogContext";
+import { useBlog } from "../../../contexts/BlogContext";
 import styles from "./CategoryFilter.module.css";
+import { Categories } from "../../../types/Categories.enum";
 
 export default function CategoryFilter() {
   const { filter, setFilter } = useBlog();
-  const categories = ["모든 카테고리", "AI", "새로운 기술", "커뮤니티"];
 
   return (
     <div className={styles.categoryFilter}>
-      {categories.map((category) => (
+      {Object.values(Categories).map((category) => (
         <button
           key={category}
           className={`${styles.categoryButton} ${

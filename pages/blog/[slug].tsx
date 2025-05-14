@@ -5,7 +5,7 @@ import Link from "next/link";
 import Head from "next/head";
 import styles from "./[slug].module.css";
 import { useEffect, useState } from "react";
-import { Post } from "../../contexts/BlogContext";
+import { Post } from "@/types/Post.type";
 
 export default function BlogPost() {
   const router = useRouter();

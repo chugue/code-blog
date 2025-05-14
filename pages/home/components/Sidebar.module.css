@@ -1,15 +1,21 @@
 /* components/Sidebar.module.css */
 .sidebar {
-  width: 250px; /* 사이드바 너비 예시 */
-  padding: 20px;
-  border-right: 1px solid #000f2c; /* 구분선 예시 */
-  background-color: #000f2c; /* 배경색 예시 */
+  padding: var(--spacing-md) var(--spacing-sm);
+  background-color: transparent;
+  border: none;
+  border-left: 1px solid var(--border);
+  border-radius: 0;
+  height: 100%;
+  position: relative;
+  margin-top: var(--spacing-xl);
 }
 
 .title {
-  font-size: 1.2rem;
+  font-size: var(--font-md);
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: var(--spacing-base);
+  padding-bottom: var(--spacing-xs);
+  color: var(--color-text-light);
 }
 
 .list {
@@ -18,13 +24,57 @@
   margin: 0;
 }
 
+.listItem {
+  margin-bottom: var(--spacing-xs);
+}
+
 .listItem a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--foreground);
   display: block;
-  padding: 8px 0;
+  padding: var(--spacing-xs) 0;
+  transition: all 0.2s ease;
+}
+
+.postTitle {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-lg);
+}
+
+.postAuthor {
+  display: block;
+  font-size: var(--font-xs);
+  color: var(--color-text-light);
+  margin-top: var(--spacing-xs);
 }
 
 .listItem a:hover {
-  color: #0070f3; /* 호버 색상 예시 */
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+.listItem a:hover .postTitle {
+  color: var(--primary);
+}
+
+/* 태그 섹션 추가 (이미지에 보이는 태그 영역과 유사하게) */
+.tagSection {
+  margin-top: var(--spacing-lg);
+}
+
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-xs);
+  margin-top: var(--spacing-base);
+}
+
+.tag {
+  background-color: var(--secondary);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  color: var(--primary);
 }

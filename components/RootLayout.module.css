@@ -1,0 +1,44 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  gap: var(--gap-lg);
+  flex: 1;
+}
+
+.mainContent {
+  flex: 1;
+  min-width: 0;
+  scrollbar-gutter: stable;
+}
+
+.sidebarContainer {
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: var(--container-md)) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebarContainer {
+    width: 100%;
+    margin-top: var(--spacing-lg);
+  }
+}

@@ -1,33 +1,7 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
 import mockPosts from "../mock/posts.json";
-
-// Types
-interface Author {
-  name: string;
-  avatar: string;
-  username: string;
-}
-
-export interface Post {
-  id: number;
-  title: string;
-  subtitle: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  date: string;
-  image: string;
-  category: string;
-  author: Author;
-}
-
-interface BlogContextType {
-  posts: Post[];
-  filter: string;
-  setFilter: (filter: string) => void;
-  getFilteredPosts: () => Post[];
-  getPostBySlug: (slug: string) => Post | undefined;
-}
+import { BlogContextType } from "@/types/BlogContext.type";
+import { Post } from "@/types/Post.type";
 
 // Create context
 const BlogContext = createContext<BlogContextType | undefined>(undefined);

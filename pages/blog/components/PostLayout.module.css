@@ -1,15 +1,15 @@
 .postLayout {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container-xl);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 var(--spacing-base);
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr 300px;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: var(--gap-lg);
+  margin-top: var(--spacing-lg);
 }
 
 .main {
@@ -22,16 +22,16 @@
 
 .stickyContent {
   position: sticky;
-  top: 2rem;
+  top: var(--spacing-lg);
 }
 
 .recommendedPosts,
 .tableOfContents,
 .shareButtons {
-  background-color: #f9f9f9;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  background-color: var(--color-background);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -39,44 +39,45 @@
 .tocList {
   list-style: none;
   padding: 0;
-  margin: 1rem 0 0 0;
+  margin: var(--spacing-base) 0 0 0;
 }
 
 .recommendList li,
 .tocList li {
-  margin-bottom: 0.7rem;
+  margin-bottom: var(--spacing-xs);
 }
 
 .recommendList a,
 .tocList a {
   display: block;
-  color: #333;
+  color: var(--color-text-primary);
   text-decoration: none;
-  padding: 0.5rem 0;
+  padding: var(--spacing-xs) 0;
   transition: color 0.2s ease;
 }
 
 .recommendList a:hover,
 .tocList a:hover {
-  color: var(--primary, #0070f3);
+  color: var(--color-primary);
 }
 
 .socialButtons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: var(--gap-xs);
+  margin-top: var(--spacing-base);
 }
 
 .socialButtons button {
-  padding: 0.5rem 1rem;
+  padding: var(--spacing-xs) var(--spacing-base);
   border: none;
-  border-radius: 0.25rem;
+  border-radius: var(--radius-xs);
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
+/* 소셜 미디어 버튼은 브랜드 색상을 유지합니다 */
 .twitterBtn {
   background-color: #1da1f2;
   color: white;
@@ -88,7 +89,7 @@
 }
 
 .linkBtn {
-  background-color: #333;
+  background-color: var(--color-text-primary);
   color: white;
 }
 
@@ -96,28 +97,28 @@
 :global(.dark) .recommendedPosts,
 :global(.dark) .tableOfContents,
 :global(.dark) .shareButtons {
-  background-color: #1a1a1a;
+  background-color: var(--color-background-dark);
 }
 
 :global(.dark) .recommendList a,
 :global(.dark) .tocList a {
-  color: #e0e0e0;
+  color: var(--color-text-dark);
 }
 
 /* 반응형 디자인 */
-@media (max-width: 1024px) {
+@media (max-width: var(--container-lg)) {
   .container {
     grid-template-columns: 1fr 250px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: var(--container-md)) {
   .container {
     grid-template-columns: 1fr;
   }
 
   .sidebar {
-    margin-top: 2rem;
+    margin-top: var(--spacing-lg);
   }
 
   .stickyContent {

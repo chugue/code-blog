@@ -1,7 +1,7 @@
 import Head from "next/head";
-import CategoryFilter from "../components/CategoryFilter";
+import CategoryFilter from "./home/components/CategoryFilter";
 import BlogPosts from "./blog/components/BlogPosts";
-import CallToAction from "../components/CallToAction";
+import CallToAction from "./home/components/CallToAction";
 import styles from "./index.module.css";
 
 export default function Home() {

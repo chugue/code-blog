@@ -1,19 +1,19 @@
 .blogPosts {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: var(--gap-lg);
 }
 
 .blogPost {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding-bottom: 2.5rem;
+  gap: var(--gap-sm);
+  padding-bottom: var(--spacing-xl);
   border-bottom: 1px solid var(--border);
 }
 
 .postMeta {
-  font-size: 0.85rem;
+  font-size: var(--font-xs);
 }
 
 .category {
@@ -29,7 +29,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  /* margin-bottom: 1rem; */
+  /* margin-bottom: var(--spacing-base); */
 }
 
 .titleContainer {
@@ -37,7 +37,7 @@
 }
 
 .postTitle {
-  font-size: 1.75rem;
+  font-size: var(--font-xl);
   font-weight: 700;
   line-height: 1.2;
   transition: color 0.2s;
@@ -49,10 +49,10 @@
 }
 
 .postSubtitle {
-  font-size: 1.25rem;
+  font-size: var(--font-lg);
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-xs);
   transition: color 0.2s;
 }
 
@@ -62,7 +62,7 @@
 
 .postContent {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--gap-md);
   align-items: flex-start;
   justify-content: space-between;
 }
@@ -75,14 +75,14 @@
 .postExcerpt {
   color: var(--muted);
   line-height: 1.6;
-  margin-bottom: 0.75rem;
-  font-size: 0.95rem;
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-sm);
 }
 
 .readMore {
   color: var(--primary);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: var(--font-sm);
   display: inline-block;
   position: relative;
 }
@@ -105,7 +105,7 @@
 .postImage {
   width: 50%;
   height: auto;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   aspect-ratio: 2 / 1.2;
   overflow: hidden;
   flex-shrink: 0;
@@ -116,23 +116,23 @@
 .authorInfo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding-bottom: 0.2rem;
+  gap: var(--gap-xs);
+  padding-bottom: var(--spacing-xs);
 }
 
 .avatar {
-  border-radius: 50%;
+  border-radius: var(--radius-full);
 }
 
 .loading {
   text-align: center;
-  padding: 2rem;
+  padding: var(--spacing-lg);
   color: var(--muted);
 }
 
 .error {
   text-align: center;
-  padding: 2rem;
+  padding: var(--spacing-lg);
   color: var(--accent);
 }
 
@@ -146,7 +146,7 @@
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
-    margin-top: 1rem;
+    margin-top: var(--spacing-base);
     order: 2;
   }
 
