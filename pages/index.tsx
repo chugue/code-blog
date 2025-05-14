@@ -17,7 +17,6 @@ export default function Home() {
       </Head>
       <CategoryFilter />
       <BlogPosts />
-      <CallToAction />
     </div>
   );
 }

@@ -1,13 +1,9 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 import styles from "./Navbar.module.css";
+import { Search } from "@deemlol/next-icons";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <nav className={styles.navbar}>
       <div className={styles.navContainer}>
@@ -17,35 +13,19 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <button
-          className={styles.menuButton}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
+        <button className={styles.menuButton}>
           <Image src="/icons/star.svg" alt="Star" width={24} height={24} />
         </button>
 
-        <div
-          className={`${styles.navLinks} ${isMenuOpen ? styles.active : ""}`}
-        >
+        <div className={styles.navLinks}>
           <Link href="/home">
             <span className={styles.navLink}>피드</span>
-          </Link>
-          <Link href="/feed">
-            <span className={styles.navLink}>내 글 보기</span>
           </Link>
         </div>
 
         <div className={styles.navActions}>
-          <Link href="/login">
-            <button className={styles.starButton}>
-              <Image
-                src="/icons/login.svg"
-                alt="login"
-                width={16}
-                height={16}
-              />
-              로그인
-            </button>
+          <Link href="/search">
+            <Search />
           </Link>
         </div>
       </div>

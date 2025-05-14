@@ -1,0 +1,56 @@
+.searchSidebar {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebarTitle {
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.filterSection {
+  margin-bottom: 20px;
+}
+
+.filterTitle {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.filterList {
+  list-style: none;
+  padding: 0;
+}
+
+.filterItem {
+  padding: 8px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+}
+
+.filterItem:hover {
+  color: #000;
+}
+
+.filterItem.active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.searchStats {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #eaeaea;
+}
+
+.searchStats p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}

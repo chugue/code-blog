@@ -65,3 +65,9 @@
     gap: var(--gap-sm);
   }
 }
+
+.callToActionContainer {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: var(--spacing-xl);
+}
