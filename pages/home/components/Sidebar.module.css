@@ -1,0 +1,30 @@
+/* components/Sidebar.module.css */
+.sidebar {
+  width: 250px; /* 사이드바 너비 예시 */
+  padding: 20px;
+  border-right: 1px solid #000f2c; /* 구분선 예시 */
+  background-color: #000f2c; /* 배경색 예시 */
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem a {
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  padding: 8px 0;
+}
+
+.listItem a:hover {
+  color: #0070f3; /* 호버 색상 예시 */
+}

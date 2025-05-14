@@ -1,8 +1,8 @@
 import Head from "next/head";
 import CategoryFilter from "../components/CategoryFilter";
-import BlogPosts from "../components/BlogPosts";
+import BlogPosts from "./blog/components/BlogPosts";
 import CallToAction from "../components/CallToAction";
-import styles from "../styles/Home.module.css";
+import styles from "./index.module.css";
 
 export default function Home() {
   return (
@@ -15,7 +15,6 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <CategoryFilter />
       <BlogPosts />
       <CallToAction />

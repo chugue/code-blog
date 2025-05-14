@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useBlog } from "../contexts/BlogContext";
-import styles from "../styles/BlogPosts.module.css";
+import { useBlog } from "../../../contexts/BlogContext";
+import styles from "./BlogPosts.module.css";
 
 export default function BlogPosts() {
   const { getFilteredPosts } = useBlog();

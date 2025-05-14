@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
-import styles from "../styles/404.module.css";
+import styles from "./404.module.css";
 
 export default function NotFound() {
   return (

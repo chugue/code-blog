@@ -1,0 +1,130 @@
+.postLayout {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.main {
+  width: 100%;
+}
+
+.sidebar {
+  width: 100%;
+}
+
+.stickyContent {
+  position: sticky;
+  top: 2rem;
+}
+
+.recommendedPosts,
+.tableOfContents,
+.shareButtons {
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.recommendList,
+.tocList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.recommendList li,
+.tocList li {
+  margin-bottom: 0.7rem;
+}
+
+.recommendList a,
+.tocList a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.recommendList a:hover,
+.tocList a:hover {
+  color: var(--primary, #0070f3);
+}
+
+.socialButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.socialButtons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.twitterBtn {
+  background-color: #1da1f2;
+  color: white;
+}
+
+.facebookBtn {
+  background-color: #1877f2;
+  color: white;
+}
+
+.linkBtn {
+  background-color: #333;
+  color: white;
+}
+
+/* 다크 모드 스타일 */
+:global(.dark) .recommendedPosts,
+:global(.dark) .tableOfContents,
+:global(.dark) .shareButtons {
+  background-color: #1a1a1a;
+}
+
+:global(.dark) .recommendList a,
+:global(.dark) .tocList a {
+  color: #e0e0e0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    margin-top: 2rem;
+  }
+
+  .stickyContent {
+    position: static;
+  }
+
+  .socialButtons {
+    justify-content: center;
+  }
+}

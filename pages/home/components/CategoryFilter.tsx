@@ -1,4 +1,4 @@
-import { useBlog } from "../contexts/BlogContext";
+import { useBlog } from "@/contexts/BlogContext";
 import styles from "./CategoryFilter.module.css";
 
 export default function CategoryFilter() {

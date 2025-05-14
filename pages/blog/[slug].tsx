@@ -3,7 +3,7 @@ import { useBlog } from "../../contexts/BlogContext";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import styles from "../../styles/BlogPost.module.css";
+import styles from "./[slug].module.css";
 import { useEffect, useState } from "react";
 import { Post } from "../../contexts/BlogContext";
 
