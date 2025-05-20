@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState, useEffect } from "react";
 import Head from "next/head";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -13,6 +13,18 @@ interface LayoutProps {
 export default function RootLayout({ children }: LayoutProps) {
   const router = useRouter();
   const isSearchPage = router.pathname === "/search";
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 800);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
@@ -29,12 +41,12 @@ export default function RootLayout({ children }: LayoutProps) {
       <div className={styles.container}>
         <main
           className={`${styles.mainContent} ${
-            isSearchPage ? styles.fullWidth : ""
+            isSearchPage || isMobile ? styles.fullWidth : ""
           }`}
         >
           {children}
         </main>
-        {!isSearchPage && (
+        {!isSearchPage && !isMobile && (
           <div className={styles.sidebarContainer}>
             <Sidebar />
           </div>

@@ -7,12 +7,17 @@
   position: relative;
   overflow: hidden;
   border-radius: 12px;
+  background-color: var(--card-background);
+  padding: var(--spacing-xl);
+  margin: var(--spacing-xl) 0;
+  gap: var(--spacing-xs);
 }
 
 .ctaContent {
   max-width: 600px;
   z-index: 2;
   padding: 0 var(--spacing-lg);
+  flex: 1;
 }
 
 .ctaTitle {
@@ -34,18 +39,14 @@
 }
 
 .primaryButton {
-  background-color: var(--primary);
-  color: var(--foreground);
+  background-color: var(--primary-light);
+  color: var(--color-text-light);
   border: none;
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: 4px;
   font-weight: 600;
   font-size: var(--font-sm);
   transition: all 0.2s;
-}
-
-.primaryButton:hover {
-  background-color: #2a75ff;
 }
 
 .secondaryButton {
@@ -70,9 +71,10 @@
   opacity: 0.9;
   z-index: 1;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .ctaSection {
     flex-direction: column;
     text-align: center;
@@ -81,6 +83,7 @@
 
   .ctaContent {
     padding: 0;
+    margin-bottom: 20px;
   }
 
   .ctaButtons {
@@ -90,8 +93,8 @@
   .ctaImage {
     position: relative;
     margin-top: var(--spacing-lg);
-    opacity: 0.4;
     object-fit: cover;
     overflow: hidden;
+    border-radius: var(--radius-md);
   }
 }

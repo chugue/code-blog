@@ -1,15 +1,32 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
-import { Search } from "@deemlol/next-icons";
+import { Search, Sun, Moon } from "@deemlol/next-icons";
+import { useTheme } from "../contexts/ThemeContext";
 
 export default function Navbar() {
+  const { theme, toggleTheme } = useTheme();
+
+  const logoSrc = theme === "dark" ? "/logo-dark.png" : "/logo.png";
+
+  const searchButton = (
+    <Link href="/search" style={{ marginRight: "10px" }}>
+      <Search />
+    </Link>
+  );
+
+  const themeToggleButton = (
+    <button onClick={toggleTheme} className={styles.themeButton}>
+      {theme === "dark" ? <Moon /> : <Sun />}
+    </button>
+  );
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.navContainer}>
         <div className={styles.navLogo}>
           <Link href="/">
-            <Image src="/logo.png" alt="Logo" width={100} height={50} />
+            <Image src={logoSrc} alt="Logo" width={100} height={50} />
           </Link>
         </div>
 
@@ -18,15 +35,14 @@ export default function Navbar() {
         </button>
 
         <div className={styles.navLinks}>
-          <Link href="/home">
-            <span className={styles.navLink}>피드</span>
+          <Link href="/recommend">
+            <span className={styles.navLink}>추천 컨텐츠</span>
           </Link>
         </div>
 
         <div className={styles.navActions}>
-          <Link href="/search">
-            <Search />
-          </Link>
+          {searchButton}
+          {themeToggleButton}
         </div>
       </div>
     </nav>
